@@ -31,20 +31,3 @@
     </div> -->
   </div>
 </nav>
-
-
-<style>
-  button {
-  background: var(--bg-color);
-  /* border: 1.5x solid var(--text-color); */
-  border: 0px solid var(--text-color);
-  /* border-radius: 10px; */
-  color: var(--text-color);
-  /* padding: 6px 8px; */
-  transition: background-color 0.3s
-}
-
-button:active {
-  background: inherit;
-}
-</style>
