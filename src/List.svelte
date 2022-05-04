@@ -25,11 +25,11 @@
 	<span>
 	{#if page > 1}
 	<ul>
-		<li style="display:inline-block;"><a href="#/top/{page - 1}">&#60; page {page - 1}</a></li>
-		<li style="display:inline-block;"><a href="#/top/{page + 1}">page {page + 1} &#62;</a></li>
+		<li style="display:inline-block;"><a href="#/top/{page - 1}">&#60;&#60; page {page - 1}</a></li>
+		<li style="display:inline-block;"><a href="#/top/{page + 1}">page {page + 1} &#62;&#62;</a></li>
 	</ul>
 	{:else}
-		<a href="#/top/{page + 1}">page {page + 1} &#62;</a>
+		<a href="#/top/{page + 1}">page {page + 1} &#62;&#62;</a>
 	{/if}
 	</span>
 {:else}
