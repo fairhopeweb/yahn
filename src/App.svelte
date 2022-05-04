@@ -2,19 +2,20 @@
 	import { onMount } from 'svelte';
 	import List from './List.svelte';
 	import Item from './Item.svelte';
-	
+	import Button from './Button.svelte'
+
 	let item;
 	let page;
+	let count = 0;
 
 	async function hashchange() {
 		// the poor man's router!
 		const path = window.location.hash.slice(1);
-
+		
 		if (path.startsWith('/item')) {
 			const id = path.slice(6);
 			item = await fetch(`https://node-hnapi.herokuapp.com/item/${id}`).then(r => r.json()); // fetch article from api
-
-			window.scrollTo(0, 0);
+			window.scrollTo(0,0);
 		} else if (path.startsWith('/top')) {
 			page = +path.slice(5); // get page num
 			item = null;
@@ -28,17 +29,41 @@
 
 <svelte:window on:hashchange={hashchange}/>
 
-<main>
+<Button>
+</Button>
 
+<main>
 	{#if item}
 		<Item {item} returnTo="#/top/{page}"/>
 	{:else if page}
 		<List {page}/>
 	{/if}
-	<center>Made with ❤️ by <a href="https://www.github.com/cveinnt">Vincent Wu</a></center>
 </main>
 
 <style>
+	:root{
+		--bg-color: #f2eee2;
+		--text-color: #0084f6;
+		--bg-dark: #1d3040;
+		--text-dark: #fff;
+		
+		--a: rgb(0,100,200);
+		--a-visited: #205c85;
+		--a-dark: #F5F8FD;
+		--a-dark-visited: #aeafb1;
+	}
+
+	:global(body) {
+		background-color: var(--bg-color);
+		color: var(--text-color);
+		transition: background-color 0.3s
+	}
+
+	:global(body.dark-mode) {
+		--bg-color: var(--bg-dark);
+		--text-color: var(--text-dark);
+	}
+
 	main {
 		position: relative;
 		max-width: 800px;
@@ -53,16 +78,24 @@
 		margin: 0 0 1em 0;
 	}
 
-	main :global(a) {
-		color: rgb(100, 78, 245);
+	:global(a:link) {
+		color: var(--a);
 		text-decoration: none;
 	}
 
-	main :global(a:hover) {
+	:global(a:hover) {
 		text-decoration: underline;
 	}
 
-	main :global(a:visited) {
-		color: rgb(72, 61, 139);
+	:global(a:visited) {
+		color: var(--a-visited);
+	}
+
+	:global(.dark-mode a:link) {
+		color: var(--a-dark);
+	}
+
+	:global(.dark-mode a:visited) {
+		color: var(--a-dark-visited);
 	}
 </style>
