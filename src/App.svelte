@@ -2,17 +2,16 @@
 	import { onMount } from 'svelte';
 	import List from './List.svelte';
 	import Item from './Item.svelte';
-	import Button from './Button.svelte'
+	import Navbar from './Navbar/Navbar.svelte';
 
 	let item;
 	let page;
-	let count = 0;
+
 	const isDark = window.matchMedia("(prefers-color-scheme:dark)").matches
 
 	async function hashchange() {
 		// the poor man's router!
 		const path = window.location.hash.slice(1);
-		
 		if (path.startsWith('/item')) {
 			const id = path.slice(6);
 			item = await fetch(`https://node-hnapi.herokuapp.com/item/${id}`).then(r => r.json()); // fetch article from api
@@ -30,7 +29,11 @@
 
 <svelte:window on:hashchange={hashchange}/>
 
-<Button {isDark} />
+<Navbar {isDark}/>
+
+<svelte:head>
+	<link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet"/>
+</svelte:head>
 
 <main>
 	{#if item}
