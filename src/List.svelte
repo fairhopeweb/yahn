@@ -24,10 +24,12 @@
 	{/each}
 	<span>
 	{#if page > 1}
-		<a href="#/top/{page - 1}">page {page - 1}</a>
-		<a href="#/top/{page + 1}">page {page + 1}</a>
+	<ul>
+		<li style="display:inline-block;"><a href="#/top/{page - 1}">&#60; page {page - 1}</a></li>
+		<li style="display:inline-block;"><a href="#/top/{page + 1}">page {page + 1} &#62;</a></li>
+	</ul>
 	{:else}
-		<a href="#/top/{page + 1}">page {page + 1}</a>
+		<a href="#/top/{page + 1}">page {page + 1} &#62;</a>
 	{/if}
 	</span>
 {:else}
