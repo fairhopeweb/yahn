@@ -1,4 +1,4 @@
-# Yet Another Hacker News Reader - [*yahn*](https://yahn.vercel.app)
+# Yet Another Hacker News Reader - [🍠 *yahn*](https://yahn.vercel.app)
 
 ![demo](/public/img/demo.jpg)
 
@@ -20,7 +20,8 @@ So I built [_**yahn**_](https://yahn.vercel.app) to achieve both.
 - [Vercel](https://vercel.com): deployment PaaS 
 - [Figma](https://figma.com): prototyping, UI & logo design
 
-<p style="text-align: center;"> Made with ❤️ by Vincent Wu.</p>
+<p align="center"> Made with ❤️ by Vincent Wu.</p>
+
 
 # Development
 ## Installation
