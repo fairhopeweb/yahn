@@ -54,6 +54,8 @@
 		--a-visited: #483d8b;
 		--a-dark: #fcbe5b;
 		--a-dark-visited: #be934c;
+
+		--max-w: 800px;
 	}
 
 	:global(body) {
@@ -69,7 +71,7 @@
 
 	main {
 		position: relative;
-		max-width: 800px;
+		max-width: var(--max-w);
 		margin: 0 auto;
 		min-height: 101vh;
 		padding: 1em;

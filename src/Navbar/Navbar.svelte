@@ -39,4 +39,8 @@
   span {
     font-family: 'Sacramento', cursive, italic;
   }
+  nav {
+		max-width: var(--max-w);
+		margin: 0 auto;
+  } 
 </style>
