@@ -7,6 +7,7 @@
 	let item;
 	let page;
 	let count = 0;
+	const isDark = window.matchMedia("(prefers-color-scheme:dark)").matches
 
 	async function hashchange() {
 		// the poor man's router!
@@ -29,8 +30,7 @@
 
 <svelte:window on:hashchange={hashchange}/>
 
-<Button>
-</Button>
+<Button {isDark} />
 
 <main>
 	{#if item}

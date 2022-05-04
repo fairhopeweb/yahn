@@ -1,7 +1,11 @@
 <script>
     let theme;
 	$: switchTheme = theme === "🌙" ? "💡" : "🌙";
-
+	export let isDark;
+	if (isDark) {
+		theme = "🌙"
+		window.document.body.classList.toggle('dark-mode')
+	}
     function toggle() {
         theme = switchTheme
 	    window.document.body.classList.toggle('dark-mode')
