@@ -22,8 +22,14 @@
 	{#each items as item, i}
 		<Summary {item} {i} {offset}/>
 	{/each}
-
-	<a href="#/top/{page + 1}">page {page + 1}</a>
+	<span>
+	{#if page > 1}
+		<a href="#/top/{page - 1}">page {page - 1}</a>
+		<a href="#/top/{page + 1}">page {page + 1}</a>
+	{:else}
+		<a href="#/top/{page + 1}">page {page + 1}</a>
+	{/if}
+	</span>
 {:else}
 	<p class="loading">loading...</p>
 {/if}

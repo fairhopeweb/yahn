@@ -1,6 +1,6 @@
 <script>
     let theme;
-	$: switchTheme = theme === "dark" ? "light" : "dark";
+	$: switchTheme = theme === "🌙" ? "💡" : "🌙";
 
     function toggle() {
         theme = switchTheme

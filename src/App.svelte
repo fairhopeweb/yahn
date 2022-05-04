@@ -43,14 +43,14 @@
 <style>
 	:root{
 		--bg-color: #f2eee2;
-		--text-color: #0084f6;
+		--text-color: #000;
 		--bg-dark: #1d3040;
 		--text-dark: #fff;
-		
-		--a: rgb(0,100,200);
-		--a-visited: #205c85;
-		--a-dark: #F5F8FD;
-		--a-dark-visited: #aeafb1;
+
+		--a: #462fdd;
+		--a-visited: #483d8b;
+		--a-dark: #fcbe5b;
+		--a-dark-visited: #be934c;
 	}
 
 	:global(body) {
