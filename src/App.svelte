@@ -3,9 +3,11 @@
 	import List from './List.svelte';
 	import Item from './Item.svelte';
 	import Navbar from './Navbar/Navbar.svelte';
+	import News from './News.svelte';
 
 	let item;
 	let page;
+	let keyword;
 
 	const isDark = window.matchMedia("(prefers-color-scheme:dark)").matches
 
@@ -19,6 +21,10 @@
 		} else if (path.startsWith('/top')) {
 			page = +path.slice(5); // get page num
 			item = null;
+		} else if (path.startsWith('/news')){
+			keyword = path.slice(6) === ""? "machine learning" : path.slice(6);
+			item = null;
+			page = null;
 		} else {
 			window.location.hash = '/top/1';
 		}
@@ -40,6 +46,8 @@
 		<Item {item} returnTo="#/top/{page}"/>
 	{:else if page}
 		<List {page}/>
+	{:else if keyword}
+		<News {keyword}/>
 	{/if}
 </main>
 
