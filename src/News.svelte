@@ -1,5 +1,5 @@
 <script>
-    const news_api = process.env.GNEWS_API_KEY;
+    const news_api = "a871285be1c82d72f5215d2717db1c1c";
     export let keyword;
     let URL = `https://gnews.io/api/v4/search?q=${keyword}&token=${news_api}`;
     let articles = [];
