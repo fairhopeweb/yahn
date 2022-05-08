@@ -1,7 +1,7 @@
 <script>
-    const news_api = process.env.NEWS_API_KEY;
+    const news_api = process.env.GNEWS_API_KEY;
     export let keyword;
-    let URL = `https://newsapi.org/v2/everything?q=${keyword}&apiKey=${news_api}`;
+    let URL = `https://gnews.io/api/v4/search?q=${keyword}&token=${news_api}`;
     let articles = [];
 
     $: fetch(URL)
@@ -19,7 +19,7 @@
 
         {#each articles as article}
             <div class="card">
-                <img src="{article.urlToImage}" alt="">
+                <img src="{article.image}" alt="">
                 <div class="card-body">
                     <h3>{article.title}</h3>
                     <p> {article.description} </p>
